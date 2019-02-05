@@ -91,3 +91,78 @@ Un script Python va relier, centraliser, enregistrer et envoyer par wifi sur le 
 *Pour les prochaines étapes, afin de manipuler la carte Raspberry, il faudra vous munir d’un clavier, d’une souris ainsi que d’un écran (ou projecteur). Veillez à connecter la carte Raspberry à un réseau wifi domestique ayant une portée suffisante lors de l’utilisation.*
 
 L’achat d’une carte Raspberry PI ne suffit pas à son utilisation immédiate. Il faut dans un premier temps installer Raspian sur une carte micro SD et faire les premières configurations :
+
+- Installer le logiciel Raspbian sur micro SD en passant par un ordinateur (https://www.raspberrypi.org/downloads/raspbian/)
+- Faire les mises à jour
+- Installer les bibliothèques python nécessaire
+- Brancher et vérifier si la caméra PI est détectée et opérationnelle
+
+La carte Raspberry fonctionne comme une carte mère et est équipée de son propre système d’exploitation. Elle possède **4 ports USB** auxquels on peut brancher la carte Arduino. En fonction du port utilisé, il faut adapter le code pour que les deux cartes communiquent.
+
+Il est avant tout nécessaire d'importer une librairie spéciale de communication sur le script python pour que le transfert de données se fasse. C’est de là que vient la première ligne du code « import serial ». La ligne 8 affecte une variable appelée « ser » qui contient les données envoyées par la carte Arduino. La partie **« /dev/ttyACM0 »** signifie que les données de la carte Arduino sont envoyées vers un port USB précis.
+
+La carte Raspberry est équipée d’un port permettant d’insérer la **caméra Raspberry**. Cette caméra est directement pilotée par quelques lignes du script python.
+A la sixième ligne du code, la caméra installée sur la carte est **identifiée**. 
+A la ligne sept, **la résolution de l’image** est paramétrée de façon à ce que l’on puisse observer les insectes avec une résolution suffisante mais également pour que les fichiers ne soient pas trop lourd (en 2592*1944).
+
+A l’aide de la boucle **while**, la caméra fonctionnera dès que le capteur infrarouge détecte un obstacle via la fonction « camera.capture ()» tout en enregistrant la photo au format jpg. 
+Pour mieux distinguer chaque photo, chaque image est associée à un nom qui correspond à la date et à l’heure (format heure-minute-seconde) de la capture.
+
+![lien vers le fichier source du Raspebbery](https://raw.githubusercontent.com/particitae/DRIRMU/master/Raspberry-Python/insectes.py)
+
+Ce fichier est à déplacer dans le répertoire /home de l'utilisateur. 
+Afin de démarrer le script Python au démarrage, il est nécessaire de l'ajouter dans le script de démarrage /etc/rc.local soit sudo /sur/bin/python /home/$nomdelutilisateur/insectes.py
+
+**Attention** une fois ce code lancé, le programme se lancera en boucle dès que le dispositif sera alimenté.
+
+# Mécanique
+
+*Pour cette dernière étape, il est nécessaire de se munir de matériel spécifique : tournevis, règle, scie, silicone, perceuse, équerres.*
+
+*Le début de cette étape peut être réalisé en parallèle avec les deux précédentes. La dernière étape devra être réalisée une fois que toutes les étapes seront finies.*
+
+Commencer tout d’abord part découper les panneaux de fibre composite (2cm d’épaisseur) de la manière suivante :
+
+![figure 2](https://raw.githubusercontent.com/particitae/DRIRMU/master/Images/Sch%C3%A9ma%20M%C3%A9canique-2.png)
+
+La plupart des pièces devra être usinée:
+
+- La pièce **C** :
+
+![figure 3](https://raw.githubusercontent.com/particitae/DRIRMU/master/Images/Sch%C3%A9ma%20M%C3%A9canique-3.png)
+
+- Pièce **B’** :
+
+![figure 4](https://raw.githubusercontent.com/particitae/DRIRMU/master/Images/Sch%C3%A9ma%20M%C3%A9canique-4.png)
+
+- Pièce **B** (intérieur) :
+
+![figure 5](https://raw.githubusercontent.com/particitae/DRIRMU/master/Images/Sch%C3%A9ma%20M%C3%A9canique-5.png)
+
+- Assemblage des pièces **C* et C** :
+
+![figure Assemblage](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Ensemble-Planches.jpg/450px-Ensemble-Planches.jpg)
+
+Ces deux pièces sont à assembler à l’aide d’**une charnière** de manière à ce que la pièce **C** pivote autour de **C* **. Ajouter deux équerres sur la pièce **C* ** de la manière suivante :
+
+Voici l’ensemble des pièces à ce stade de la fabrication :
+
+![Ensemble des pièces à ce stage](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Ensemble-des-Planches.png/797px-Ensemble-des-Planches.png)
+
+Vous pouvez maintenant commencer à assembler les pièces entre-elles pour obtenir le résultat suivant :
+
+![vue d'ensemble](https://raw.githubusercontent.com/particitae/DRIRMU/master/Images/Sch%C3%A9ma%20M%C3%A9canique-1.png)
+
+La pièce **C*** est attachée à la **B’** à l’aide d’**équerres**. La pièce **C** doit rester mobile autour de sa charnière. Les autres seront assemblées à l’aide de vis.
+
+![Emplacements capteurs IR et temp/hum intérieur](https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Capteur-Photo.jpg/450px-Capteur-Photo.jpg)
+
+![Intérieur de la boîte](https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Int%C3%A9rieur_du_dispositif.jpg/450px-Int%C3%A9rieur_du_dispositif.jpg)
+
+Ajuster la longueur des fils (cordon USB) pour une meilleure organisation. Ajouter des verrous glissière pour verrouiller la pièce **C**.
+
+La boîte est maintenant finie et prête à l’emploi.
+Il est conseillé de réaliser des tests avant de la placer en extérieur. 
+Il est possible de réaliser ces tests à l’aide de grillons. 
+
+![Résultat d'une capture](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/R%C3%A9sultat_d%27une_capture_dans_un_dispositif_de_sciences_participatives.jpg/800px-R%C3%A9sultat_d%27une_capture_dans_un_dispositif_de_sciences_participatives.jpg)
