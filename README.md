@@ -85,6 +85,7 @@ Il peut être judicieux d’ajouter une résistance d’une cinquantaine d’Ohm
 ## Arduino
 
 La carte Arduino est le centre de commande des différents capteurs et du flash de l’appareil photo (par LED). Cette carte connectée à l’ordinateur propose d’enregistrer un script, des ordres pour son utilisation.
+
 ![lien vers le fichier source de l'Arduino](https://raw.githubusercontent.com/particitae/DRIRMU/master/Arduino/Insectes_Arduino.ino)
 
 ## Raspberry
@@ -166,7 +167,6 @@ La pièce **C*** est attachée à la **B’** à l’aide d’**équerres**. La 
 Ajuster la longueur des fils (cordon USB) pour une meilleure organisation. Ajouter des verrous glissière pour verrouiller la pièce **C**.
 
 La boîte est maintenant finie et prête à l’emploi.
-Il est conseillé de réaliser des tests avant de la placer en extérieur. 
-Il est possible de réaliser ces tests à l’aide de grillons. 
+Voici un exemple de tests effectué avec des grillons. 
 
 ![Résultat d'une capture](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/R%C3%A9sultat_d%27une_capture_dans_un_dispositif_de_sciences_participatives.jpg/800px-R%C3%A9sultat_d%27une_capture_dans_un_dispositif_de_sciences_participatives.jpg)
