@@ -58,10 +58,11 @@ Les étapes d’électronique et de programmation dépendent l’une de l’autr
 La partie qui va suivre consiste à réaliser tous les branchements nécessaires. Vous aurez besoin de vous munir d’un fer à souder.
 
 
-Il est nécessaire dans un premier temps de réaliser des ponts de soudure sur les deux capteurs d’humidité/température, afin d’avoir une même alimentation pour les deux,
-![Figure 2](https://upload.wikimedia.org/wikipedia/commons/5/55/Montage-Electronique.png), 
+Il est nécessaire dans un premier temps de réaliser des ponts de soudure sur les deux capteurs d’humidité/température, afin d’avoir une même alimentation pour les deux.
 
-Il faut ensuite réaliser des ponts de soudure sur les deux LEDs, afin qu’elles soient branchées en série 
+![Figure 2](https://upload.wikimedia.org/wikipedia/commons/5/55/Montage-Electronique.png) 
+
+Il faut ensuite réaliser des ponts de soudure sur les deux LEDs, afin qu’elles soient branchées en série.
 
 ![Figure 3](https://upload.wikimedia.org/wikipedia/commons/c/c7/Montage_Electronique_2.png).
 
@@ -71,11 +72,12 @@ Voici le plan électronique de l’ensemble de l’installation :
 ![Plan Electronique](https://raw.githubusercontent.com/particitae/DRIRMU/master/Images/Sch%C3%A9ma-Electronique.png)
 
 Il est nécessaire de commencer par effectuer les branchements relatifs à la **carte Arduino** en suivant le plan électronique ci-dessus.
-L’alimentation secteur alimente la **carte Raspberry**, sur laquelle on connecte la **caméra Raspberry** (qui fera office d’appareil photo). 
+L’alimentation secteur alimente la **carte Raspberry**, sur laquelle on connecte la **caméra Raspberry** (qui fera office d’appareil photo).
+
 La micro carte SD, contiendra les scripts python et toutes les données.
 La **carte Arduino** est alimentée par la **carte Raspberry** via USB.
 
-*Les câbles rouges connectent les alimentations, les câbles noirs connectent les masses et les câbles jaunes sont les voies d’entrées-sorties digitales
+*Les câbles rouges connectent les alimentations, les câbles noirs connectent les masses et les câbles jaunes sont les voies d’entrées-sorties digitales.
 Il peut être judicieux d’ajouter une résistance d’une cinquantaine d’Ohm afin de réduire la puissance des LEDs.*
 
 **Attention le bon fonctionnement de l'ensemble dépend de la réussite de cette étape. Veillez à réaliser les bons branchements.**
@@ -107,15 +109,15 @@ La carte Raspberry fonctionne comme une carte mère et est équipée de son prop
 Il est avant tout nécessaire d'importer une librairie spéciale de communication sur le script python pour que le transfert de données se fasse. C’est de là que vient la première ligne du code « import serial ». La ligne 8 affecte une variable appelée « ser » qui contient les données envoyées par la carte Arduino. La partie **« /dev/ttyACM0 »** signifie que les données de la carte Arduino sont envoyées vers un port USB précis.
 
 La carte Raspberry est équipée d’un port permettant d’insérer la **caméra Raspberry**. Cette caméra est directement pilotée par quelques lignes du script python.
-A la sixième ligne du code, la caméra installée sur la carte est **identifiée**. 
+A la sixième ligne du code, la caméra installée sur la carte est **identifiée**.
 A la ligne sept, **la résolution de l’image** est paramétrée de façon à ce que l’on puisse observer les insectes avec une résolution suffisante mais également pour que les fichiers ne soient pas trop lourd (en 2592*1944).
 
-A l’aide de la boucle **while**, la caméra fonctionnera dès que le capteur infrarouge détecte un obstacle via la fonction « camera.capture ()» tout en enregistrant la photo au format jpg. 
+A l’aide de la boucle **while**, la caméra fonctionnera dès que le capteur infrarouge détecte un obstacle via la fonction « camera.capture ()» tout en enregistrant la photo au format jpg.
 Pour mieux distinguer chaque photo, chaque image est associée à un nom qui correspond à la date et à l’heure (format heure-minute-seconde) de la capture.
 
 ![lien vers le fichier source du Raspebbery](https://raw.githubusercontent.com/particitae/DRIRMU/master/Raspberry-Python/insectes.py)
 
-Ce fichier est à déplacer dans le répertoire /home de l'utilisateur. 
+Ce fichier est à déplacer dans le répertoire /home de l'utilisateur.
 Afin de démarrer le script Python au démarrage, il est nécessaire de l'ajouter dans le script de démarrage /etc/rc.local soit sudo /sur/bin/python /home/$nomdelutilisateur/insectes.py
 
 **Attention** une fois ce code lancé, le programme se lancera en boucle dès que le dispositif sera alimenté.
@@ -167,6 +169,6 @@ La pièce **C*** est attachée à la **B’** à l’aide d’**équerres**. La 
 Ajuster la longueur des fils (cordon USB) pour une meilleure organisation. Ajouter des verrous glissière pour verrouiller la pièce **C**.
 
 La boîte est maintenant finie et prête à l’emploi.
-Voici un exemple de tests effectué avec des grillons. 
+Voici un exemple de tests effectué avec des grillons.
 
 ![Résultat d'une capture](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/R%C3%A9sultat_d%27une_capture_dans_un_dispositif_de_sciences_participatives.jpg/800px-R%C3%A9sultat_d%27une_capture_dans_un_dispositif_de_sciences_participatives.jpg)
