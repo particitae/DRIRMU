@@ -1,5 +1,6 @@
 Projet Dispositif de Recensement d'Insectes Rampants en Milieu Urbain 2018-2019
-Auteurs : Marc Gourayeb, Jean-François Lendresse, Adrien Vache, Pierre Heran, Pierre Brochard, Laure Turcati, Jérôme Gaudin, Baptiste Fabre
+
+Auteurs : Marc Gourayeb, Jean-François Lendresse, Adrien Vache, Pierre Heran, Pierre Brochard, Laure Turcati, Jérôme Gaudin, Paloma Martinez
 
 [Université de Bordeaux](https://www.u-bordeaux.fr/) - [Particitae](http://particitae.fr/) - [Celia](http://www.celia.u-bordeaux1.fr)
 
@@ -11,9 +12,9 @@ Le dispositif développé et conçu par les étudiants spécialistes de l’inst
 Le projet s’articule ainsi en trois axes :
 -   La conception mécanique du dispositif
 
--   Sa conception électronique
+-   La conception électronique
 
--   la programmation servant le fonctionnement et l’automatisation du système.
+-   La programmation servant le fonctionnement et l’automatisation du système.
 
 ----------
 # Liste du Matériel
@@ -53,15 +54,18 @@ L’insecte dès qu'il entre dans la boîte est détecté par un capteur de mouv
 Pour réaliser à bien la fabrication, vous aurez besoin de certains outils : un fer à soudé, un tournevis, un écran et son câble HDMI, un clavier et une souris.
 Les étapes d’électronique et de programmation dépendent l’une de l’autre. L’étape mécanique peut être réalisée à part.
 
-#Électronique
+# Électronique
 La partie qui va suivre consiste à réaliser tous les branchements nécessaires. Vous aurez besoin de vous munir d’un fer à souder.
 
 
-Il est nécessaire dans un premier temps de réaliser des ponts de soudure sur les deux capteurs d’humidité/température, afin d’avoir une même alimentation pour les deux ![Figure 2](https://upload.wikimedia.org/wikipedia/commons/5/55/Montage-Electronique.png), 
+Il est nécessaire dans un premier temps de réaliser des ponts de soudure sur les deux capteurs d’humidité/température, afin d’avoir une même alimentation pour les deux,
+![Figure 2](https://upload.wikimedia.org/wikipedia/commons/5/55/Montage-Electronique.png), 
 
-puis sur les deux LEDs, afin qu’elles soient branchées en série ![Figure 3](https://upload.wikimedia.org/wikipedia/commons/c/c7/Montage_Electronique_2.png).
+Il faut ensuite réaliser des ponts de soudure sur les deux LEDs, afin qu’elles soient branchées en série 
 
-Pensez à recouvrir les ponts par une gaine isolante.
+![Figure 3](https://upload.wikimedia.org/wikipedia/commons/c/c7/Montage_Electronique_2.png).
+
+`Pensez à recouvrir les ponts par une gaine isolante.`
 
 Voici le plan électronique de l’ensemble de l’installation :
 ![Plan Electronique](https://raw.githubusercontent.com/particitae/DRIRMU/master/Images/Sch%C3%A9ma-Electronique.png)
@@ -90,7 +94,7 @@ Un script Python va relier, centraliser, enregistrer et envoyer par wifi sur le 
 
 *Pour les prochaines étapes, afin de manipuler la carte Raspberry, il faudra vous munir d’un clavier, d’une souris ainsi que d’un écran (ou projecteur). Veillez à connecter la carte Raspberry à un réseau wifi domestique ayant une portée suffisante lors de l’utilisation.*
 
-L’achat d’une carte Raspberry PI ne suffit pas à son utilisation immédiate. Il faut dans un premier temps installer Raspian sur une carte micro SD et faire les premières configurations :
+L’achat d’une carte Raspberry PI ne suffit pas à son utilisation immédiate. Il faut dans un premier temps installer le systéme d'exploitation Raspian sur une carte micro SD et faire les premières configurations :
 
 - Installer le logiciel Raspbian sur micro SD en passant par un ordinateur (https://www.raspberrypi.org/downloads/raspbian/)
 - Faire les mises à jour
