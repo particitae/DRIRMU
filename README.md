@@ -1,6 +1,6 @@
 Projet Dispositif de Recensement d'Insectes Rampants en Milieu Urbain 2018-2019
 
-Auteurs : Marc Gourayeb, Jean-François Lendresse, Adrien Vache, Pierre Heran, Pierre Brochard, Laure Turcati, Jérôme Gaudin, Paloma Martinez
+Auteurs : [Marc Gourayeb](https://fr.linkedin.com/in/marc-gourayeb-32ba0013a), Jean-François Lendresse, Adrien Vache, Pierre Heran, Pierre Brochard, [Laure Turcati](http://www.particitae.upmc.fr/fr/index.html), Jérôme Gaudin, Paloma Martinez
 
 [Université de Bordeaux](https://www.u-bordeaux.fr/) - [Particitae](http://particitae.fr/) - [Celia](http://www.celia.u-bordeaux1.fr)
 
